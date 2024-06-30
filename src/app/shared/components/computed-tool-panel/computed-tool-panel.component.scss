@@ -1,0 +1,32 @@
+.separator {
+    margin: 0 3px;
+}
+
+.total-style {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+
+    .row-group-length {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .row-item {
+        margin: 5px 0;
+
+        .row-key {
+            font-size: 1em;
+            color: #555;
+
+            .separator {
+                color: #999;
+                margin: 0 5px;
+            }
+        }
+    }
+}

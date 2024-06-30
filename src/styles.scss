@@ -1,1 +1,122 @@
 /* You can add global styles to this file, and also import other style files */
+/* Core Grid CSS */
+@import 'ag-grid-community/styles/ag-grid.css';
+/* Quartz Theme Specific CSS */
+@import 'ag-grid-community/styles/ag-theme-quartz.css';
+
+
+:root,
+      body,
+      my-app {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      html {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: auto;
+        font-family: -apple-system, "system-ui", "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+          "Noto Color Emoji";
+      }
+
+      body {
+        overflow: auto;
+        background-color: var(--ag-background-color);
+      }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+    --ag-background-color: 
+color-mix(in srgb, #fff, #182230 97%);
+    --ag-foreground-color: #fff;
+    --ag-border-color: rgba(255,255,255,0.16);
+    --ag-secondary-border-color: 
+color-mix(in srgb, transparent, var(--ag-foreground-color) 10%);
+    --ag-header-background-color: 
+color-mix(in srgb, #fff, #182230 93%);
+    --ag-tooltip-background-color: 
+color-mix(in srgb, #fff, #182230 96%);
+    --ag-control-panel-background-color: 
+color-mix(in srgb, #fff, #182230 93%);
+    --ag-input-disabled-background-color: #68686e12;
+    --ag-card-shadow: 0 1px 20px 1px black;
+    --ag-input-border-color: var(--ag-border-color);
+    --ag-input-disabled-border-color: rgba(255,255,255,0.07);
+    --ag-checkbox-unchecked-color: color-mix(in srgb, var(--ag-background-color), var(--ag-foreground-color) 40%);
+    --ag-row-hover-color: 
+color-mix(in srgb, transparent, var(--ag-active-color) 20%);
+    --ag-selected-row-background-color: var(--ag-row-hover-color);
+    --ag-panel-background-color: color-mix(in srgb, var(--ag-background-color), var(--ag-foreground-color) 10%);
+    --ag-panel-border-color: 
+color-mix(in srgb, transparent, var(--ag-foreground-color) 10%);
+    --ag-menu-background-color: color-mix(in srgb, var(--ag-background-color), var(--ag-foreground-color) 10%);
+    --ag-menu-border-color: 
+color-mix(in srgb, transparent, var(--ag-foreground-color) 10%);
+    --ag-advanced-filter-join-pill-color: #7a3a37;
+    --ag-advanced-filter-column-pill-color: #355f2d;
+    --ag-advanced-filter-option-pill-color: #5a3168;
+    --ag-advanced-filter-value-pill-color: #374c86;
+    --ag-popup-shadow: 0 0px 20px rgba(0, 0, 0, 0.30);
+    --ag-row-loading-skeleton-effect-color: rgba(202, 203, 204, 0.4);
+    color-scheme: dark;
+}
+
+
+.mat-pseudo-checkbox-checked::after {
+    color: white !important;
+}
+
+mat-button-toggle {
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    line-height: 0;
+}
+
+
+hr {
+    border: 0 solid white;
+    border-bottom: 1px solid var(--ag-border-color);;
+
+}
+
+mat-form-field {
+    margin: 0 5px;
+    display: flex;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    border-radius: 4px !important;
+
+    border: 1px solid var(--ag-input-border-color);
+    color: white !important;
+    background-color: var(--ag-header-background-color) !important;
+
+    mat-label {
+        color: white;
+    }
+
+    .mat-mdc-select {
+        background-color: var(--ag-header-background-color) !important;
+        display: inline-block;
+        width: 100%;
+        outline: none;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        color: white;
+        font-family: var(--mat-select-trigger-text-font);
+        line-height: var(--mat-select-trigger-text-line-height);
+        font-size: var(--mat-select-trigger-text-size);
+        font-weight: var(--mat-select-trigger-text-weight);
+        letter-spacing: var(--mat-select-trigger-text-tracking);
+    }
+}
+

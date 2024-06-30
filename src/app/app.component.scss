@@ -1,0 +1,121 @@
+@import 'ag-grid-community/styles/ag-grid.css';
+/* Quartz Theme Specific CSS */
+@import 'ag-grid-community/styles/ag-theme-quartz.css';
+
+
+.mat-button-toggle-group-appearance-standard .mat-button-toggle-appearance-standard+.mat-button-toggle-appearance-standard {
+    border-left: 1px solid var(--ag-input-border-color);
+}
+
+
+mat-button-toggle-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+
+    border-width: 0;
+
+    mat-button-toggle {
+        display: inline-block;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        border: 1px solid var(--ag-input-border-color);
+
+        background: var(--ag-header-background-color);
+        color: white;
+    }
+}
+
+.mat-expansion-panel {
+    background: var(--ag-header-background-color);
+    color: white;
+
+    mat-panel-title {
+        color: white;
+    }
+
+    .mat-expansion-indicator::after{
+        background-color: white;
+        color: white !important;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - (2 * 16px));
+    margin: 16px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    h2 {
+        margin: 0;
+    }
+}
+
+.import,
+.filter {
+    flex: 0 0 auto;
+    padding: 10px;
+}
+
+.filter {
+    display: flex;
+    position: absolute;
+    margin-top: 40px;
+    z-index: 999;
+    
+    mat-accordion {
+        width: calc(33% - 10px);
+        margin: 5px;
+    }
+    
+}
+
+.grid {
+    margin-top: 70px;
+    flex: 1 1 auto;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+    display: flex;
+    justify-content: end;
+    padding-top: 15px;
+}
+
+.mat-expansion-panel {
+    background: var(--ag-header-background-color);
+    color: white;
+
+    mat-panel-title {
+        color: white;
+    }
+
+    .mat-expansion-indicator::after{
+        background-color: white;
+        color: white !important;
+    }
+}
+
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    margin-right: 16px;
+    align-items: center;
+    text-wrap: nowrap;
+}
+
+.mat-expansion-panel-body {
+    padding: 0 24px 16px;
+    height: calc(100vh - 170px);
+    overflow: auto;
+}
+
