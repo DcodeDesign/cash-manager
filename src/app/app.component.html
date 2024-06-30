@@ -1,7 +1,10 @@
 <div class="container">
   <div class="header">
     <h2> {{ fileName ? fileName : 'Collection de données' }} </h2>
-    <input type="file" multiple accept='xlsx' (change)="onFileChange($event)" />
+    <span>
+     Ajouter un fichier xls :  <input type="file" multiple accept='xlsx' (change)="onFileChange($event)" />
+    </span>
+   
   </div>
 
   <div>

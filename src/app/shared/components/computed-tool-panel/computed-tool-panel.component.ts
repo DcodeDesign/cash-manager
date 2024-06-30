@@ -87,7 +87,7 @@ export interface CustomStatsToolPanelParams extends IToolPanelParams {
                     <mat-expansion-panel hideToggle>
 
                         <mat-expansion-panel-header>
-                            <mat-panel-title> Aggregate Monthly  </mat-panel-title>
+                            <mat-panel-title> Aggregate Monthly </mat-panel-title>
                             <mat-panel-description></mat-panel-description>
                         </mat-expansion-panel-header>
                     
@@ -110,24 +110,39 @@ export interface CustomStatsToolPanelParams extends IToolPanelParams {
                                 <button (click)="aggregateMonthly()"> Computed </button>
                             </dt>
 
-                            <dt class="totalStyle" *ngIf="aggregateMonthlyValues.length > 0">
-                                <h4 style="margin-top: 15px; margin-bottom: 0;"> Calculate Average Expenses </h4>
-                                <span> {{ calculateAverageExpenses(aggregateMonthlyValues) | currency:'EUR'}} </span>
-
-                                <h4 style="margin-top: 15px; margin-bottom: 0;" > Calculate Average Incomes </h4>
-                                <span> {{ calculateAverageIncomes(aggregateMonthlyValues) | currency:'EUR'}} </span>
+                            <dt class="totalStyle calculate-average-container" 
+                                style="margin-bottom: 30px;display: flex;width: 100%;justify-content: space-around;align-items: flex-end;"
+                                *ngIf="aggregateMonthlyValues.length > 0">
+                                <div>
+                                    <h4 style="margin-top: 15px; margin-bottom: 0;"> Calculate Average Expenses </h4>
+                                    <span> {{ calculateAverageExpenses(aggregateMonthlyValues) | currency:'EUR'}} </span>
+                                </div>
+                                
+                                <div>
+                                    <h4 style="margin-top: 15px; margin-bottom: 0;" > Calculate Average Incomes </h4>
+                                    <span> {{ calculateAverageIncomes(aggregateMonthlyValues) | currency:'EUR'}} </span>
+                                </div>
                             </dt>
 
-                            <ng-container *ngFor="let values of aggregateMonthlyValues">
-                                <dt class="totalStyle">
-                                    <h3 style="margin-top: 25px; margin-bottom: 0; font-weight: bold;">{{ values.date | date: 'MMM yyyy' }}</h3>
-                                </dt>
-                                <dt class="totalStyle">total income: <b>{{ values.totalIncome | currency:'EUR'}}</b></dt>
-                                <dt class="totalStyle">total expenses: <b>{{ values.totalExpenses | currency:'EUR' }}</b></dt>
-                                <dt class="totalStyle">Balance: <b>{{ values.balance | currency:'EUR' }}</b></dt>
-                                <dt class="totalStyle">potentialSavings: <b>{{ values.potentialSavings | currency:'EUR' }}</b></dt>
-                            </ng-container>
-                            
+                            <div class="aggregate-monthly-container" 
+                                    *ngIf="aggregateMonthlyValues.length > 0">
+                                <div class="header" style="flex-wrap: no-wrap; display: flex;width: 100%;justify-content: space-around;align-items: flex-end;">
+                                    <dt class="totalStyle">Month</dt>
+                                    <dt class="totalStyle">total income</dt>
+                                    <dt class="totalStyle">total expenses</dt>
+                                    <dt class="totalStyle">Balance</dt>
+                                    <dt class="totalStyle">potential savings</dt>
+                                </div>
+                                <div *ngFor="let values of aggregateMonthlyValues">
+                                    <div class="body" style="flex-wrap: no-wrap; display: flex;width: 100%;justify-content: space-around;align-items: flex-end;">
+                                        <dt class="totalStyle">{{ values.date | date: 'MMM yyyy' }}</dt>
+                                        <dt class="totalStyle">{{ values.totalIncome | currency:'EUR'}}</dt>
+                                        <dt class="totalStyle">{{ values.totalExpenses | currency:'EUR' }}</dt>
+                                        <dt class="totalStyle">{{ values.balance | currency:'EUR' }}</dt>
+                                        <dt class="totalStyle">{{ values.potentialSavings | currency:'EUR' }}</dt>
+                                    </div>
+                                </div>
+                            </div>
                         </dl>
 
                     </mat-expansion-panel>
@@ -190,6 +205,13 @@ export interface CustomStatsToolPanelParams extends IToolPanelParams {
     .mat-expansion-panel {
     background: var(--ag-header-background-color);
     color: white;
+
+    .header, .body {
+        dt {
+            width: 20%;
+            text-wrap: nowrap;
+        }
+    }
 
     .custom-input, button {
         font-size: 14px;

@@ -77,7 +77,7 @@ export class AppComponent implements OnInit {
         toolPanelParams: {
           title: "Custom Stats",
         },
-        width: 350
+        width: 685
       },
     ],
     defaultToolPanel: "columns",
